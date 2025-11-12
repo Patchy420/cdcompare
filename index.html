@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CD12Key – Game Key Price Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo"><span>CD12</span>Key</div>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section class="hero">
+      <h1>Find the best price for your next game</h1>
+      <p>Search and compare game key prices from multiple stores in seconds.</p>
+    </section>
+
+    <section class="search-bar">
+      <input id="searchInput" type="text" placeholder="Search for a game..." />
+      <select id="platformSelect">
+        <option value="">All platforms</option>
+        <option value="PC">PC</option>
+        <option value="Xbox">Xbox</option>
+        <option value="PlayStation">PlayStation</option>
+        <option value="Nintendo">Nintendo</option>
+      </select>
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <section id="gamesList" class="games-list">
+      <!-- Games will be injected here -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CD12Key – early beta version. Prices and availability may change.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

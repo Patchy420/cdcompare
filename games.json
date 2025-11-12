@@ -1,0 +1,50 @@
+[
+  {
+    "id": "elden-ring-pc",
+    "title": "Elden Ring (PC)",
+    "platform": "PC",
+    "region": "Global",
+    "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg",
+    "description": "Action RPG from FromSoftware.",
+    "offers": [
+      {
+        "store": "Steam",
+        "price": 59.99,
+        "currency": "EUR",
+        "region": "Global",
+        "url": "https://example.com/steam-elden-ring-affiliate"
+      },
+      {
+        "store": "G2A",
+        "price": 39.99,
+        "currency": "EUR",
+        "region": "Global",
+        "url": "https://example.com/g2a-elden-ring-affiliate"
+      }
+    ]
+  },
+  {
+    "id": "fc25-pc",
+    "title": "EA Sports FC 25 (PC)",
+    "platform": "PC",
+    "region": "EU",
+    "cover": "",
+    "description": "Football simulation game.",
+    "offers": [
+      {
+        "store": "Gamivo",
+        "price": 44.99,
+        "currency": "EUR",
+        "region": "EU",
+        "url": "https://example.com/gamivo-fc25-affiliate"
+      },
+      {
+        "store": "Kinguin",
+        "price": 47.5,
+        "currency": "EUR",
+        "region": "EU",
+        "url": "https://example.com/kinguin-fc25-affiliate"
+      }
+    ]
+  }
+]
