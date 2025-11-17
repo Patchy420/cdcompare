@@ -83,6 +83,10 @@
   <label>Region</label>
   <input id="offer_region">
 
+  <!-- NEW: Affiliate URL field -->
+  <label>Affiliate URL</label>
+  <input id="affiliate_url" placeholder="https://example.com/your-product-link">
+
   <button onclick="addOffer()">Add Offer</button>
 
   <p id="offerResult"></p>
@@ -90,7 +94,7 @@
 
 <script>
 const SUPABASE_URL = "https://gzjdgjmyhpgnembbtwfp.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6amRnam15aHBnbmVtYmJ0d2ZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5Nzk5MzAsImV4cCI6MjA3ODU1NTkzMH0.rBWIQ891Z_iaSCZCDQUQfytN8P9ss346OYffYwWcFd8";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6amRnam15aHBnbmV0YmJ0d2ZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5Nzk5MzAsImV4cCI6MjA3ODU1NTkzMH0.rBWIQ891Z_iaSCZCDQUQfytN8P9ss346OYffYwWcFd8";
 
 async function addGame() {
   const data = {
@@ -114,7 +118,17 @@ async function addGame() {
   });
 
   const json = await res.json();
-  result.innerText = "Game added! UUID: " + JSON.stringify(json, null, 2);
+  result.innerText = "Game added! Response: " + JSON.stringify(json, null, 2);
+
+  // Optional: clear fields after adding
+  if (res.ok) {
+    title.value = "";
+    slug.value = "";
+    platform.value = "";
+    region.value = "";
+    cover.value = "";
+    description.value = "";
+  }
 }
 
 async function addOffer() {
@@ -123,7 +137,9 @@ async function addOffer() {
     store: store.value,
     price: price.value,
     currency: currency.value,
-    region: offer_region.value
+    region: offer_region.value,
+    // NEW: send affiliate_url to Supabase
+    affiliate_url: affiliate_url.value
   };
 
   const res = await fetch(`${SUPABASE_URL}/rest/v1/offers`, {
@@ -139,6 +155,15 @@ async function addOffer() {
 
   const json = await res.json();
   offerResult.innerText = "Offer added: " + JSON.stringify(json, null, 2);
+
+  // Optional: clear fields after adding
+  if (res.ok) {
+    store.value = "";
+    price.value = "";
+    currency.value = "";
+    offer_region.value = "";
+    affiliate_url.value = "";
+  }
 }
 </script>
 
